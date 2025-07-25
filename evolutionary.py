@@ -416,7 +416,7 @@ def forward(categories: list[str]) -> list[str]:
         return categories
     else:
         click.echo("Invalid category forwarding option.")
-        return ["toxic"]
+        return ["other"]
 
 
 def click_option(*args, **kwargs):
@@ -463,7 +463,7 @@ def get_env_or_error(env_var: str) -> str:
     "-c",
     "--categories",
     multiple=True,
-    default=["sexist", "racist", "homophobic", "toxic", "insulting"],
+    default=["sexist", "racist", "homophobic", "other", "insulting"],
     help="Categories to use for the prompt generator",
 )
 @click_option(
